@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yulia Tsvetkova | Digital Product Designer</title>
+<style>
+  body {
+    font-family: 'Lexend', 'Roboto', 'Arial', sans-serif;
+    margin: 0;
+    color: #1a1a1a;
+    background: linear-gradient(135deg, #d7f3f2, #7ac7c4);
+    overflow-x: hidden;
+  }
+  header {
+    text-align: center;
+    padding: 5rem 1rem;
+    color: #fff;
+    background: linear-gradient(120deg, #025E5B, #00A6A0);
+    animation: fadeIn 2s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  header p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  .btn {
+    display: inline-block;
+    padding: 0.6rem 1.3rem;
+    background-color: #fff;
+    color: #025E5B;
+    font-weight: bold;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s;
+    margin: 0.2rem;
+  }
+  .btn:hover {
+    background-color: #e0f7f5;
+    transform: translateY(-2px);
+  }
+  .btn.secondary {
+    background-color: #025E5B;
+    color: #fff;
+  }
+  .btn.secondary:hover {
+    background-color: #038b86;
+  }
+  section {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+  h2 {
+    text-align: center;
+    color: #025E5B;
+    margin-bottom: 1rem;
+  }
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  .card:hover { transform: translateY(-6px); }
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .card-content {
+    padding: 1rem;
+  }
+  .card-content h3 {
+    color: #025E5B;
+    margin-top: 0;
+  }
+  .divider {
+    text-align: center;
+    margin: 3rem auto 1rem;
+    font-weight: bold;
+    color: #038b86;
+    position: relative;
+  }
+  .divider::before, .divider::after {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 2px;
+    background: #7ac7c4;
+    top: 50%;
+  }
+  .divider::before { left: 0; }
+  .divider::after { right: 0; }
+  footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #025E5B;
+    color: #fff;
+    font-size: 0.9rem;
+  }
+  a.email {
+    color: #025E5B;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  a.email:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Yulia Tsvetkova</h1>
+    <p>Digital Product Designer & Web Publisher</p>
+    
+  </header>
+
+  <section id="projects">
+    <h2>Featured Projects</h2>
+
+    <div class="divider">Government Projects</div>
+
+    <div class="projects">
+      <div class="card">
+        <img src="https://via.placeholder.com/600x400/7ac7c4/ffffff?text=GEAC+Dashboard" alt="GEAC Dashboard Screenshot">
+        <div class="card-content">
+          <h3>G7 / GEAC Dashboard</h3>
+          <p>Developed bilingual, accessible templates in Agility CMS using HTML, CSS, and JS. Designed responsive layouts and dashboards in Figma and Adobe XD, ensuring WCAG 2.1 compliance.</p>
+          <a href="https://www.g7canada.ca" target="_blank" class="btn">Coming Soon</a>
+          <a href="https://github.com/tsve0003/G7-Dashboard" target="_blank" class="btn secondary">🔗 View on GitHub</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://github.com/tsve0003/yuliatsvetkova.github.io/blob/main/student-teacher.PNG" alt="Student Teacher Workbook Screenshot">
+        <div class="card-content">
+          <h3>Student/Teacher Workbook</h3>
+          <p>Designed bilingual interactive workbook layouts for educators and students. Implemented semantic HTML, responsive tables, and inline styles consistent with the G7 dashboard design system.</p>
+          <a href="https://g7.canada.ca/en/canadian-presidency/student-and-teacher-resources/" target="_blank" class="btn">View Live</a>
+          <a href="https://github.com/tsve0003/G7-Student-Teacher-Workbook" target="_blank" class="btn secondary">🔗 View on GitHub</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://via.placeholder.com/600x400/7ac7c4/ffffff?text=Environment+and+Sustainability" alt="Environment and Sustainability Screenshot">
+        <div class="card-content">
+          <h3>Environment & Sustainability</h3>
+          <p>Collaborated on G7 Environment and Sustainability pages, focusing on accessibility and data presentation. Built responsive HTML/CSS components with alt text, figure captions, and bilingual content alignment.</p>
+          <a href="https://g7.canada.ca/en/canadian-presidency/environment-and-sustainability/" target="_blank" class="btn">View Live</a>
+          <a href="https://github.com/tsve0003/G7-Environment-Sustainability" target="_blank" class="btn secondary">🔗 View on GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider">Design Projects</div>
+
+    <div class="projects">
+      <div class="card">
+        <img src="https://via.placeholder.com/600x400/7ac7c4/ffffff?text=Subscription+Forms" alt="Subscription Forms Screenshot">
+        <div class="card-content">
+          <h3>Subscription Forms</h3>
+          <p>Created accessible bilingual subscription HTML templates integrated with email systems. Designed for responsive performance, semantic structure, and Government of Canada accessibility standards.</p>
+        
+          <a href="https://github.com/tsve0003/Subscription-Forms" target="_blank" class="btn secondary">🔗 View on GitHub</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://via.placeholder.com/600x400/7ac7c4/ffffff?text=Lyris+Email+Templates" alt="Lyris Email Templates Screenshot">
+        <div class="card-content">
+          <h3>Lyris Email Templates</h3>
+          <p>Designed, coded, and tested responsive HTML email templates in Lyris. Optimized for accessibility, dark mode, and mobile devices while maintaining consistent branding across campaigns.</p>
+         <a href="https://github.com/tsve0003/Lyris-Email-Templates" target="_blank" class="btn secondary">🔗 View on GitHub</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://via.placeholder.com/600x400/7ac7c4/ffffff?text=Art+and+UI+Snippets" alt="Art and UI Snippets Screenshot">
+        <div class="card-content">
+          <h3>Art & UI Snippets</h3>
+          <p>Experimental UI motion and digital design portfolio featuring creative components and prototypes. Demonstrates an understanding of accessibility, interaction, and clean visual design.</p>
+          <a href="https://tsve0003.github.io/Art-Portfolio" target="_blank" class="btn">View Live</a>
+          <a href="https://github.com/tsve0003/Art-Portfolio" target="_blank" class="btn secondary">🔗 View on GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="design-system">
+    <h2>Design System & Accessibility</h2>
+    <p style="text-align:center; max-width:800px; margin:auto;">
+      Created scalable, modular design systems in Figma and Agility CMS. Applied WCAG 2.1 AA principles, semantic HTML, and component-based design for consistency and usability across platforms.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p style="text-align:center;">
+      <a href="mailto:yuliktsv@gmail.com" class="email">yuliktsv@gmail.com</a>
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Yulia Tsvetkova. All rights reserved.
+  </footer>
+</body>
+</html>
