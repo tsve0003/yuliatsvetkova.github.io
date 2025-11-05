@@ -1,0 +1,96 @@
+
+/* Base typography to match original design */
+body { font-family: 'Lexend','Roboto','Poppins',sans-serif; color:#1a1a1a; background:#fff; }
+img { max-width:100%; height:auto; }
+a { color:#0645ad; text-decoration: underline; }
+a:hover, a:focus { text-decoration: none; }
+details { margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 3px solid #025e5b; }
+summary { font-size: 1.5rem; font-weight: bold; color: #025e5b; cursor: pointer; margin-top: 1.5rem; }
+h3 { color:#57803b; font-size:1.25rem; line-height:1.4; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid #000; padding: 6px 8px; text-align: left; vertical-align: top; }
+caption { caption-side: top; font-weight: bold; margin-bottom: .5rem; color: #57803b; text-align: left; }
+
+
+/* Extracted styles */
+.s-da32970b { align-items: center; border: 1px solid #ccc; border-radius: 8px; display: flex; font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; max-width: 700px; padding: 1rem; }
+.s-ef5cd3bb { border: 1px solid #aaa; height: auto; margin-right: 1rem; width: 150px; }
+.s-b1969a68 { color: #025e5b; font-size: 1rem; font-weight: bold; margin: 0 0 0.5rem 0; }
+.s-b24bbaa6 { color: #0645ad; font-size: 0.95rem; text-decoration: underline; }
+.s-2a575ce7 { border-bottom: 3px solid; color: #025e5b; margin-bottom: 1.5rem; padding-bottom: 1rem; }
+.s-3ce6b948 { box-sizing: border-box; color: #025e5b; cursor: pointer; font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; font-size: 1.5rem; font-weight: bold; margin: 0; margin-top: 1.5rem; padding: 0; }
+.s-5295b211 { margin-bottom: 1.5rem; margin-top: 3rem; }
+.s-7aee4de2 { list-style: none; padding-left: 1em; }
+.s-d6650af6 { align-items: center; display: inline-flex; }
+.s-2f17b788 { margin-right: 5px; }
+.s-b839dcde { border-bottom: 3px solid #025E5B; margin-bottom: 1.5rem; padding-bottom: 1rem; }
+.s-59a49b80 { color: #57803b; font-size: 1.25rem; line-height: 1.4; margin-top: 3rem; }
+.s-9b1cd2a7 { align-items: flex-start; display: flex; flex-wrap: wrap; margin-left: 0.5rem; width: 100%; }
+.s-b4dcbecf { box-sizing: border-box; flex: 1 1 55%; max-width: 55%; padding-right: 1rem; }
+.s-f2be473c { border-left: 4px solid #9DBA60; border-radius: 20px; border-right: 4px solid #9DBA60; box-sizing: border-box; flex: 1 1 40%; margin-top: 1rem; max-width: 40%; padding: 10px; }
+.s-af1cefbe { font-size: 0.75rem; line-height: 1.2; margin: 0; }
+.s-6cfe161a { color: #57803b; font-size: 1.25rem; line-height: 1.4; }
+.s-a05dad3c { display: flex; flex-wrap: wrap; font-size: 1rem; justify-content: space-between; margin-bottom: 2rem; }
+.s-5ec63df6 { box-sizing: border-box; flex: 1 1 30%; padding-left: 2rem; }
+.s-2b2b436a { border: 2px solid #ccc; border-radius: 8px; color: #0d0d0d; font-family: 'Franklin Gothic Book', sans-serif; font-size: 14pt; margin: 3rem auto; padding: 1rem; width: 80%; }
+.s-f978ac6a { color: #57803b; font-size: 1.25rem; line-height: 1.4; margin-top: 0; text-align: center; }
+.s-4b358c2f { line-height: 1.5; text-align: center; }
+.s-d3a86f53 { margin-top: 3rem; text-align: center; }
+.s-a1d359d7 { color: #57803b; font-size: 1.25rem; line-height: 1.4; margin: 0; }
+.s-c7209779 { border: 2px solid #ccc; border-radius: 8px; color: #0d0d0d; font-size: 14pt; margin: 3rem auto; padding: 1rem; width: 80%; }
+.s-80150d7d { line-height: 1.5; }
+.s-57adc914 { color: #0645ad; text-decoration: underline; }
+.s-df771a87 { border: 2px solid #ccc; border-radius: 8px; font-family: sans-serif; margin: 0 auto; padding: 1rem; width: 80%; }
+.s-7107162f { color: #57803b; font-size: 1.25rem; line-height: 1.4; margin-bottom: 1rem; text-align: center; }
+.s-f9845e99 { font-size: 0.9rem; margin-bottom: 1rem; }
+.s-2a940715 { border-bottom: 1px solid #000; display: inline-block; max-width: 100%; min-width: 200px; word-wrap: break-word; }
+.s-9e570768 { font-size: 0.9rem; margin-bottom: 1rem; max-width: 100%; }
+.s-4a695fd0 { border-bottom: 1px solid #000; box-sizing: border-box; display: inline-block; min-width: 200px; width: 100%; }
+.s-238ffb78 { border-bottom: 1px solid #000; height: 1.5em; margin-bottom: 0.5rem; }
+.s-6801b92d { border-bottom: 1px solid #000; height: 1.5em; margin-bottom: 1rem; }
+.s-508cb1c9 { border-bottom: 1px solid #000; height: 1.5em; margin-bottom: 1.5rem; }
+.s-1d30ad45 { margin-top: 1.5rem; }
+.s-4eb52895 { color: #57803b; cursor: pointer; font-family: 'Franklin Gothic Book', sans-serif; font-size: 1.25rem; margin: 0; padding: 0; }
+.s-594364f0 { align-items: center; cursor: pointer; display: inline-flex; }
+.s-9d33c595 { border: 2px solid #ccc; border-radius: 8px; margin: 2rem 0; padding: 1rem; }
+.s-2a0ca835 { margin: 0; }
+.s-80bc5cf6 { border-collapse: collapse; font-family: sans-serif; font-size: 14pt; margin: 2rem auto; width: 100%; }
+.s-5704efe1 { caption-side: top; color: #57803b; font-weight: bold; margin-bottom: 0.5rem; text-align: left; }
+.s-8643462d { border: 1px solid #000; text-align: left; width: 25%; }
+.s-7686a518 { border: 1px solid #000; width: 75%; }
+.s-7965a399 { border: 1px solid #000; text-align: left; }
+.s-04b46311 { border: 1px solid #000; }
+.s-499188cb { border: 1px solid #000; border-collapse: collapse; font-family: sans-serif; font-size: 14pt; margin: 2rem auto; padding: 6px; text-align: left; width: 100%; }
+.s-ecb205dc { caption-side: top; color: #57803b; font-weight: bold; padding: 0.5rem; text-align: left; }
+.s-ae1ceba2 { border: 1pt solid #000; text-align: center; width: 50%; }
+.s-3d9a64c5 { border: 1pt solid #000; }
+.s-c3eda6d3 { padding-left: 5pt; }
+.s-b784ff60 { color: inherit; text-decoration: none; }
+.s-de0c8012 { font-size: 0.75rem; }
+.s-8d001e31 { border: 1pt solid #000; width: 30%; }
+.s-7c6a34ef { border: 1pt solid #000; width: 70%; }
+.s-b9b80a38 { border-collapse: collapse; font-family: sans-serif; font-size: 14pt; margin: 2rem auto; text-align: left; width: 100%; }
+.s-65f9d5a3 { text-align: center; }
+.s-c3bc6880 { border: 1pt solid #000; padding: 0.5rem; width: 50%; }
+.s-f0484711 { border: 1pt solid #000; padding: 0.5rem; }
+.s-ccbf73b4 { border: 2px solid #ccc; border-radius: 8px; margin: 3rem 0; padding: 1rem; }
+.s-6bdf1965 { border: 1px solid #000; border-collapse: collapse; font-family: sans-serif; font-size: 14pt; margin: 2rem auto; text-align: left; width: 100%; }
+.s-26bfb937 { border: 1pt solid #000; padding-left: 5pt; width: 50%; }
+.s-c957366e { border: 1pt solid #000; width: 50%; }
+.s-0806e33e { padding-left: 5pt; padding-right: 1pt; text-align: left; text-indent: 0pt; }
+.s-eda0589e { padding-left: 5pt; text-align: left; text-indent: 0pt; }
+.s-65488f8a { border: 2px solid #ccc; border-radius: 8px; color: #0d0d0d; font-family: 'Franklin Gothic Book', sans-serif; font-size: 14pt; margin: 3rem auto; padding: 1rem; width: 78%; }
+.s-3e4bb47e { display: inline-block; vertical-align: middle; }
+.s-12264949 { display: inline-block; margin-left: 0; padding-left: 0; vertical-align: middle; }
+.s-3669586a { border: 1px solid #000; border-collapse: collapse; font-family: sans-serif; font-size: 14pt; margin: 2rem auto; margin-left: 8pt; padding: 6px; text-align: left; width: 100%; }
+.s-288d37e7 { height: 23pt; }
+.s-977b90f1 { border: 1pt solid #000; width: 227pt; }
+.s-a4757acb { text-align: center; text-indent: 0pt; }
+.s-07ca43bf { border: 1pt solid #000; width: 255pt; }
+.s-9d200612 { text-align: left; text-indent: 0pt; }
+.s-86d91ab1 { box-sizing: border-box; color: #025e5b; font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; font-size: 1.5rem; font-weight: bold; margin: 0; margin-bottom: 1.5rem; margin-top: 1.5rem; padding: 0; }
+.s-fcdff2ef { align-items: center; display: flex; justify-content: center; padding: 2rem; }
+.s-ed9f32a6 { font-family: Arial, sans-serif; font-size: 1rem; line-height: 1.6; max-width: 700px; padding: 1.5rem; position: relative; text-align: center; }
+.s-fa5fa6ef { border-bottom: none; border-bottom-left-radius: 25px; border-left: 5px solid #144d1f; border-top: none; border-top-left-radius: 25px; bottom: 0; content: ''; left: -30px; position: absolute; top: 0; width: 20px; }
+.s-3464fe30 { border-bottom: none; border-bottom-right-radius: 25px; border-right: 5px solid #144d1f; border-top: none; border-top-right-radius: 25px; bottom: 0; content: ''; position: absolute; right: -30px; top: 0; width: 20px; }
+.s-21bbcb67 { font-size: 0.9rem; margin: 0; }
