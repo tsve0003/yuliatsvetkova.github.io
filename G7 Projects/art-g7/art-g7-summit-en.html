@@ -1,0 +1,824 @@
+<style>
+  .tab-toggle {
+    max-width: 100%;
+    margin: 2rem auto;
+    font-family: sans-serif;
+  }
+	.tab-bar label {
+  width: 50%;
+  padding: 20px 30px; /* increased padding for height */
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;  /* increased font size */
+  color: #005c5c;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  border-radius: 9999px;
+}
+
+  .tab-toggle input[type="radio"] {
+    display: none;
+  }
+
+  .tab-bar {
+    display: flex;
+    justify-content: center;
+    background: #e6f6f7;
+    border-radius: 9999px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+  }
+
+/*
+  .tab-bar label {
+    width: 50%;
+    padding: 15px 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #005c5c;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    border-radius: 9999px;
+  }
+*/
+
+  .tab1:checked ~ .tab-bar .label1,
+  .tab2:checked ~ .tab-bar .label2 {
+    background-color: #005c5c;
+    color: #fff;
+  }
+
+  .tab-content {
+    display: none;
+  }
+
+  .tab1:checked ~ .content1,
+  .tab2:checked ~ .content2 {
+    display: block;
+  }
+</style>
+<div class="tab-toggle"><input type="radio" name="tab" class="tab1" id="tab1" checked="checked"> <input type="radio" name="tab" class="tab2" id="tab2">
+<div class="tab-bar"><label for="tab1" class="label1">Global Affairs Canada Selection</label> <label for="tab2" class="label2">Other Featured Artworks</label></div>
+<div class="tab-content content1">
+<h2 style="padding-top: 5rem;">Featured Artworks</h2>
+<div style="margin: 2rem auto; width: 100%; background-color: #d0dfdd; padding: 2rem;">
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 1rem;"><!-- Artwork 1 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Angelucci-thumb-small.jpg" alt="Artwork 1" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a1').setAttribute('open', ''); document.getElementById('a1').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 2 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Ashevak-thumb-small.jpg" alt="Artwork 2" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a2').setAttribute('open', ''); document.getElementById('a2').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 3 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Atkins-thumb-small.jpg" alt="Artwork 3" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a3').setAttribute('open', ''); document.getElementById('a3').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 4 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Aupilardjuk-thumb-small.jpg" alt="Artwork 4" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a4').setAttribute('open', ''); document.getElementById('a4').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 5 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Bartlett-thumb-small.jpg" alt="Artwork 5" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a5').setAttribute('open', ''); document.getElementById('a5').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 6 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Besner-thumb-small.jpg" alt="Artwork 6" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a6').setAttribute('open', ''); document.getElementById('a6').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 7 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Blackburn-thumb-small.jpg" alt="Artwork 7" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a7').setAttribute('open', ''); document.getElementById('a7').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 8 --><img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Burtynsky-BGD-thumb-small.jpg" alt="Artwork 7" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a8').setAttribute('open', ''); document.getElementById('a8').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 8 --><img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Burtynsky-Gardens_thumb-small.jpg" alt="Artwork 8" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a8').setAttribute('open', ''); document.getElementById('a8').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 9--><img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Bush-thumb-small.jpg" alt="Artwork 9" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a9').setAttribute('open', ''); document.getElementById('a9').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 10 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Butler-thumb-small.jpg" alt="Artwork 10" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a10').setAttribute('open', ''); document.getElementById('a10').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 11 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Dicey-thumb-small.jpg" alt="Artwork 11" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a11').setAttribute('open', ''); document.getElementById('a11').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 12 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Gamble-thumb-small.jpg" alt="Artwork 12" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a12').setAttribute('open', ''); document.getElementById('a12').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 13 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Goulet-thumb-small.jpg" alt="Artwork 13" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a13').setAttribute('open', ''); document.getElementById('a13').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 14 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Hunt-thumb-small.jpg" alt="Artwork 14" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a14').setAttribute('open', ''); document.getElementById('a14').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 15 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Jackson-thumb-small.jpg" alt="Artwork 15" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a15').setAttribute('open', ''); document.getElementById('a15').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 16 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Janvier-thumb-small.jpg" alt="Artwork 16" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a16').setAttribute('open', ''); document.getElementById('a16').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 17 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Kiyooka-thumb-small.jpg" aalt="Artwork 17" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a17').setAttribute('open', ''); document.getElementById('a17').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 18 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Letendre-thumb-small.jpg" alt="Artwork 18" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a18').setAttribute('open', ''); document.getElementById('a18').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 19 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Osahor-thumb-small.jpg" alt="Artwork 19" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a19').setAttribute('open', ''); document.getElementById('a19').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 20 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Ouellette-thumb-small.jpg" alt="Artwork 20" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a20').setAttribute('open', ''); document.getElementById('a20').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 21 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Padrov-thumb-small.jpg" alt="Artwork 21" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a21').setAttribute('open', ''); document.getElementById('a21').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 22 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Rahola-thumb-small.jpg" alt="Artwork 22" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a22').setAttribute('open', ''); document.getElementById('a22').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 23	 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Ratte-thumb-small.jpg" alt="Artwork 23" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a23').setAttribute('open', ''); document.getElementById('a23').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 24	 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Riopelle-thumb-small.jpg" alt="Artwork 24" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a24').setAttribute('open', ''); document.getElementById('a24').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 25	 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Saggiak-thumb-small.jpg" alt="Artwork 25" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a25').setAttribute('open', ''); document.getElementById('a25').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 26	 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Salihou-thumb-small.jpg" alt="Artwork 26" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a26').setAttribute('open', ''); document.getElementById('a26').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 27	 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Sawchuck-thumb-small.jpg" alt="Artwork 27" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a27').setAttribute('open', ''); document.getElementById('a27').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 28	 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/SmithPeck_thumb-small.jpg" alt="Artwork 28" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a28').setAttribute('open', ''); document.getElementById('a28').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 29	 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Spence-thumb-small.jpg" alt="Artwork 29" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a29').setAttribute('open', ''); document.getElementById('a29').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 30	 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Stanbridge-thumb-small.jpg" alt="Artwork 30" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a30').setAttribute('open', ''); document.getElementById('a30').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 31	 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Thomson-thumb-small.jpg" alt="Artwork 31" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a31').setAttribute('open', ''); document.getElementById('a31').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 32	 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Thorkelsson-2-thumb-small.jpg" alt="Artwork 32" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a32').setAttribute('open', ''); document.getElementById('a32').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 32	 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Thorkelsson-1-thumb-small.jpg" alt="Artwork 32" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a32').setAttribute('open', ''); document.getElementById('a32').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 33	 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Trudeau-thumb-small.jpg" alt="Artwork 33" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a33').setAttribute('open', ''); document.getElementById('a33').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 34	 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Weir-thumb-small.jpg" alt="Artwork 34" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a34').setAttribute('open', ''); document.getElementById('a34').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 35	 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Winters-thumb-small.jpg" alt="Artwork 35" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a35').setAttribute('open', ''); document.getElementById('a35').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 36	 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Yeomans-thumb-small.jpg" alt="Artwork 36" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a36').setAttribute('open', ''); document.getElementById('a36').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <!-- Artwork 37	 --> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Yu-thumb-small.jpg" alt="Artwork 37" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a37').setAttribute('open', ''); document.getElementById('a37').scrollIntoView({ behavior: 'smooth', block: 'start' });"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-small/Yuusipik-thumb-small.jpg" alt="Artwork 38" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onclick="document.getElementById('a38').setAttribute('open', ''); document.getElementById('a38').scrollIntoView({ behavior: 'smooth', block: 'start' });"></div>
+</div>
+<h2>Featured Artists</h2>
+<details id="a1" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Sara Angelucci</summary>
+<p style="margin-top: 1.2rem;">b. 1962, Hamilton, Ontario<br>Lives and works in Toronto, Ontario</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Angelucci-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Sara Angelucci</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Angelucci-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>July 30 (Bladder Campion...)</em> 2021<br>Pigment print<br>132.8 x 100.4 cm<br>Catalogue no. 2023.01.1<br>Global Affairs Canada</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Sara Angelucci works across photography, video and audio, exploring the social and historical contexts within which images are created, from family albums to found photographs. The Nocturnal Botanical Ontario series is a close study of local plants. Working at night, Angelucci wandered through urban areas and Crown lands to photograph the details of flora and fauna. The resulting photographs invite reflection on the diverse species found on the land, their plight in the face of today&rsquo;s ecological challenges and the importance of environmental stewardship.</p>
+</div>
+</div>
+</details>
+<details id="a2" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Kenojuak Ashevak</summary>
+<p style="margin-top: 1.2rem;">b. 1927, Ikirisaq on Qikiqtaaluk (Baffin Island), Nunavut<br>d. 2013, Kinngait (Cape Dorset), Nunavut</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Ashevak-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Kenojuak Ashevak</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Ashevak-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>Owl, Ravens, and Dogs</em><br>1967<br>Stonecut on paper<br>81.1 x 96.3 cm<br>Catalogue no. 987.197.2<br>Global Affairs Canada Visual Art Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Kenojuak Ashevak was an internationally celebrated Inuit artist whose art practice led to the development of the contemporary Inuit drawing and printmaking tradition. Her colourful works have played a significant role in defining Canada&rsquo;s visual identity, and are recognized around the world for their bold forms and strong emblematic composition. Many of her works feature Arctic birds, specifically owls and ravens, allowing Ashevak to explore compositional devices of balance, colour, form and texture, while playfully conveying Inuit oral histories.</p>
+</div>
+</div>
+</details>
+<details id="a3" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Amalie Atkins</summary>
+<p style="margin-top: 1.2rem;">b. 1975, Winnipeg, Manitoba<br>Lives and works in Saskatoon, Saskatchewan</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Atkins-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Amalie Atkins</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Atkins-expanded.jpg" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em> Meg and Clare Walk Up Hill to Build Apron Hut</em><br>2019<br>Chromogenic print<br>101.6 x 127 cm<br>Catalogue no. 2020.19.2<br>Global Affairs Canada Visual Art Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Amalie Atkins is a Ukrainian-Canadian interdisciplinary artist whose practice is rooted in storytelling, often exploring ancestral connections, reasons communities flee their homelands and the ways they persevere. The film The Diamond Eye Assembly, from which this image is drawn, is based on the culture, sites and mythologies of the Ukrainian Doukhobors and Mennonites who settled in the Prairie region. Through a folktale-like aesthetic, Atkins depicts women going about everyday tasks&mdash;celebrating the resilience of the artist&rsquo;s ancestors and culture.</p>
+</div>
+</div>
+</details>
+<details id="a4" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Pierre Aupilardjuk, Shary Boyle, and John Kurok</summary>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem;"><!-- Pierre Aupilardjuk -->
+<div style="flex: 1 1 30%; min-width: 200px;">
+<h3 style="font-size: 1.2rem; text-align: left; color: #025e5b;">Pierre Aupilardjuk</h3>
+<p style="margin-top: 0.8rem;">b. 1965, Repulse Bay, Nunavut<br>Lives and works in Kangiqliniq (Rankin Inlet), Nunavut</p>
+</div>
+<!-- Shary Boyle -->
+<div style="flex: 1 1 30%; min-width: 200px;">
+<h3 style="font-size: 1.2rem; text-align: left; color: #025e5b;">Shary Boyle</h3>
+<p style="margin-top: 0.8rem;">b. 1972, Toronto, Ontario<br>Lives and works in Toronto, Ontario</p>
+</div>
+<!-- John Kurok -->
+<div style="flex: 1 1 30%; min-width: 200px;">
+<h3 style="font-size: 1.2rem; text-align: left; color: #025e5b;">John Kurok</h3>
+<p style="margin-top: 0.8rem;">b. 1977, Kangiqliniq (Rankin Inlet), Nunavut<br>Lives and works in Kangiqliniq, Nunavut</p>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Aupilardjuk-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Pierre Aupilardjuk, Shary Boyle, and John Kurok</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Aupilardjuk-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em> Nuliajuk oqaluppoq</em><br>2016<br>Smoke-fired and underglazed stoneware<br>21.1 x 23.5 cm<br>Catalogue no. 2017.72.1<br>Global Affairs Canada Visual Art Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>This collaborative sculpture by Inuit ceramicists Pierre Aupilardjuk and John Kurok, in collaboration with Toronto-based artist Shary Boyle, is the result of a month-long artist residency at Medalta, a world-renowned ceramic arts facility in Medicine Hat, Alberta. Working together, these three artists of different backgrounds, cultures, genders and ages created an imaginative and dynamic depiction of the Inuit sea goddess Nuliajuk conversing with other spiritual entities. A key figure in Inuit cosmologies, Nuliajuk is a symbol of the interconnectedness between humans and the natural world, highlighting our dependence on the environment&mdash;and on one another.</p>
+</div>
+</div>
+</details>
+<details id="a5" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Ashleigh Bartlett</summary>
+<p style="margin-top: 1.2rem;">b. 1984, Calgary, Alberta<br>Lives and works in Calgary, Alberta</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Bartlett-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Ashleigh Bartlett</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Bartlett-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>Growing Pains</em><br>2015<br>Acrylic on canvas<br>121.9 x 91.7 cm<br>Catalogue no. 2016.6.1<br>Global Affairs Canada Visual Art Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Calgary artist Ashleigh Bartlett explores the interplay between representation and abstraction in her work, reflecting on the historical trajectory of painting through a feminist lens and strategies like collage and translation. <em>Growing Pains</em> explores colour and form, creating a sense of movement, depth and complexity. The title of this work evokes the discomfort that often accompanies growth, reflecting the broader reality that, despite the many challenges of working together, cooperation is vital to meaningful collective success.</p>
+</div>
+</div>
+</details>
+<details id="a6" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Jean-Jacques Besner</summary>
+<p style="margin-top: 1.2rem;">b. 1919, Vaudreuil-Dorion, Quebec<br>d. 1993, Vaudreuil-Dorion, Quebec</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Besner-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Jean-Jacques Besner</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Besner-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>Son de fl&ucirc;te</em><br>n.d.<br>Bronze and granite<br>92 x 14 x 14 cm<br>Catalogue no. 07/8-0027<br>Canada Council Art Bank Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Quebecois artist Jean-Jacques Besner was a commercial and interior designer whose work was at the intersection of art and technology. He is known for his modernist public artworks and metal sculptures, and for his contribution to the Expo&nbsp;&lsquo;67. With its interplay of light and shadow, <em>Son de fl&ucirc;te </em>(flute sound)is an example of the artist&rsquo;s interest in aesthetics and movement.</p>
+</div>
+</div>
+</details>
+<details id="a7" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Catherine Blackburn</summary>
+<p style="margin-top: 1.2rem;">b. 1984, Patuanak, Saskatchewan<br>Lives and works in Terrace, British Columbia</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Blackburn-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Catherine Blackburn</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Blackburn-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>Bodies and Homelands</em><br>2020<br>Laminated inkjet print mounted on dibond<br>149.8 x 302.2 cm each<br>Catalogue no. 2021.01.1<br>Global Affairs Canada Visual Art Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Catherine Blackburn is a multidisciplinary D&euml;nesųłin&euml; artist and jeweller known for contemporary interpretations of traditional Indigenous art forms. Beadwork is a major aspect of her practice, as she combines historical and contemporary techniques to address subjects of Indigenous sovereignty, decolonization and representation. Inspired by her late grandmother&rsquo;s talent for garment making and beadwork, <em>Bodies and Homelands </em>shows the artist seated with her back to the camera, wearing an embroidered deer hide cloak.</p>
+</div>
+</div>
+</details>
+<details id="a8" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Edward Burtynsky</summary>
+<p style="margin-top: 1.2rem;">b. 1955, St. Catharines, Ontario<br>Lives and works in Toronto, Ontario</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;"><!-- Image 1 -->
+<div style="flex: 1 1 150px; max-width: 150px;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Burtynsky-BGD-thumb.jpg" alt="Thumbnail 8" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border: 2px solid #ccc; border-radius: 6px;">
+<div style="margin-top: 0.5rem; font-size: 0.85rem; color: #025e5b;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="margin-top: 0; color: #025e5b; text-align: center;">Edward Burtynsky</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Burtynsky-BGD-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>Railcuts #1a, C.N. Track, Skihist Provincial Park,<br>British Columbia</em><br>1985<br>Colour photograph<br>46 x 56 cm<br>Catalogue no. 84/5-0460<br>Canada Council Art Bank Collection</p>
+</div>
+</label></div>
+<!-- Image 2 -->
+<div style="flex: 1 1 150px; max-width: 150px;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Burtynsky-Gardens_thumb.jpg" alt="Thumbnail 2" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border: 2px solid #ccc; border-radius: 6px;">
+<div style="margin-top: 0.5rem; font-size: 0.85rem; color: #025e5b;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="margin-top: 0; color: #025e5b; text-align: center;">Edward Burtynsky</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Burtynsky-Gardens_expanded.jpg" alt="Expanded 2" style="width: 100%; border-radius: 4px; border: 2px solid #ccc; margin-bottom: 0.5rem;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>Two Gardens, Holland Marsh, Ontario </em><br>1982<br>Colour photograph<br>46 x 56 cm<br>Catalogue no. 83/4-0142<br>Canada Council Art Bank Collection</p>
+</div>
+</label></div>
+<!-- Description box -->
+<div style="flex: 1 1 40%; max-width: 40%; border-left: 4px solid #9DBA60; padding-left: 1rem;">
+<p>Ukrainian Canadian artist Edward Burtynsky is one of Canada&rsquo;s most celebrated photographers. He is known for his large-scale photos that examine the relationship between industry and the natural environment. His visually striking images both captivate and underscore the widespread impacts of human activity on the environment. Through this photographic form of activism, Burtynsky highlights the need for sustainability while also celebrating the enduring beauty in the world&mdash;even in landscapes altered by human presence.</p>
+</div>
+</div>
+</details>
+<details id="a9" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Jack Bush</summary>
+<p style="margin-top: 1.2rem;">b. 1909, Toronto, Ontario<br>d. 1977, Toronto, Ontario</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Bush-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Jack Bush</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Bush-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em> Slow Lean</em><br>1968<br>Acrylic on canvas<br>139.5 x 279.0 cm<br>Catalogue no. 72/3-1600<br>Canada Council Art Bank Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Jack Hamilton Bush is one of Canada&rsquo;s most renowned painters, achieving international success with his large-scale abstract canvases. With a keen eye for colour, light, composition and form, Bush would often move between paintings and prints to explore his artistic ideas and concepts. Over the course of his long career, he experimented with colour and technique to explore the joy found in everyday experiences. <em>Slow Lean </em>exemplifies his use of bold colour, strong lines and asymmetrical balance to create striking works of playful simplicity.</p>
+</div>
+</div>
+</details>
+<details id="a10" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Paul Butler</summary>
+<p style="margin-top: 1.2rem;">b. 1973, Winnipeg, Manitoba <br>Lives and works in Toronto, Ontario</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Butler-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Paul Butler</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Butler-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>Someone</em><br>2015<br>Archival inkjet print<br>57.4 x 54.1 cm<br>Catalogue no. 2018.12.1<br>Global Affairs Canada Visual Art Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Paul Butler is a multidisciplinary artist whose practice is rooted in community, collaboration and artist-led activity. In addition to his longstanding studio practice, Butler is the creator of The Collage Party, a nomadic collective studio that has invited people of all backgrounds and artistic levels to come together and create collages in a social setting for more than 20 years. <em>Someone</em>, with its merging of human form and natural imagery, evokes themes of harmony, unity and interdependence between people and their environment.</p>
+</div>
+</div>
+</details>
+<details id="a11" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Mark Dicey</summary>
+<p style="margin-top: 1.2rem;">b. 1959, Calgary, Alberta<br>Lives and works in Calgary, Alberta</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Dicey-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Mark Dicey</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Dicey-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>Above &amp; Below</em><br>2012<br>Acrylic on canvas<br>165.3 x 180.7 cm<br>Catalogue no. 2013.10.1<br>Global Affairs Canada Visual Art Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Mark Dicey is a painter who creates colourful abstract works inspired by the history and development of abstract art. His paintings feature dynamic colours, undulating lines and layered textures and shapes drawn from direct observations of his day-to-day life, creating a sense of rhythm and energy. <em>Above &amp; Below </em>is highly representative of Dicey&rsquo;s work, featuring intense colours and layered shapes. His distinct visual style and commitment to spontaneity reflect his engagement with the tradition of abstraction as a dynamic and evolving process, rather than a fixed historic style.</p>
+</div>
+</div>
+</details>
+<details id="a12" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Erik Gamble</summary>
+<p style="margin-top: 1.2rem;">b. 1950, Toronto, Ontario<br>d. 2007, Toronto, Ontario</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Gamble-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Erik Gamble</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Gamble-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>Cunning Stunts</em><br>1976<br>Acrylic on canvas<br>239.0 x 170.5 cm<br>Catalogue no. 76/7-0267<br>Canada Council Art Bank Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Erik Gamble was an abstract painter whose vibrant abstract works explore colour, shape, line and texture. His works are emotionally robust and symphonically resonant, often visually connecting with his passion for music. <em>Cunning Stunts</em> features Gamble&rsquo;s loose brushwork and tendency to define space with colour and texture rather than with heavy linework, which gives his work a spontaneous quality befitting his exploratory approach to painting.</p>
+</div>
+</div>
+</details>
+<details id="a13" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Claude Goulet</summary>
+<p style="margin-top: 1.2rem;">b. 1925, Montr&eacute;al, Quebec<br>d. 1994, Trois-Rivi&egrave;res, Quebec</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Goulet-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Claude Goulet</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Goulet-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>&Eacute;quilibre &eacute;nergetique</em><br>1974<br>Acrylic, lacquer and sand on linen<br>217.8 x 217.8 cm<br>Catalogue no. 994.67.1<br>Global Affairs Canada Visual Art Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Claude Goulet was a Canadian abstract painter who worked in a variety of media and techniques. Whether using oil and mixed media or less conventional materials like sand, he created textured geometric compositions capturing a dynamic interplay of colour, light and perception. <em>Equilibre &eacute;nergetique</em> (energy balance) is a term that refers to the balance between energy absorbed and energy expended. As a result, the work helps highlight the importance of balanced energy production and consumption to ensure an efficient use of resources and the maintenance of a healthy whole.</p>
+</div>
+</div>
+</details>
+<details id="a14" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Shawn Hunt</summary>
+<p style="margin-top: 1.2rem;">b. 1975, Vancouver, British Columbia<br>Lives and works on the Sunshine Coast, British Columbia</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Hunt-expanded.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Shawn Hunt</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Hunt-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>The Race</em><br>2024<br>Acrylic on canvas<br>125.7 x 156.4 cm<br>Catalogue no. 2024.59.1<br>Global Affairs Canada Visual Art Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Shawn Hunt is an Heiltsuk artist who combines his Scottish, French and First Nations heritage to push the boundaries of traditional Northwest Coast formline design. In his work, he uses innovative materials and motifs to create abstract, surreal and sculptural artworks based on ancestral Heiltsuk cosmology. <em>The Race </em>is a dreamscape scene capturing the modern sentiment of &ldquo;keeping up&rdquo; while still connecting to cultural identities. This work, in conjunction with the Amalie Atkins photograph, evokes the idea of moving forward together in collaboration and community</p>
+</div>
+</div>
+</details>
+<details id="a15" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">A. Y. Jackson</summary>
+<p style="margin-top: 1.2rem;">b. 1882, Montr&eacute;al, Quebec<br>d. 1974, Kleinburg, Ontario</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Jackson-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">A. Y. Jackson</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Jackson-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>Algoma Landscape</em><br>c. 1937<br>Oil on panel<br>44.2 x 51.7 cm<br>Catalogue no. 995.43.1a-b<br>Global Affairs Canada Visual Art Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Alexander Young (A.&nbsp;Y.) Jackson was one of the most influential painters in Canadian art history and a founding member of the Group of Seven. Focusing almost exclusively on landscapes, Jackson was interested in depictions of the land that combined authentic representation with a bold, colourful and reverent expression of place. His work captured a monumental and optimistic time in Canadian history by showcasing the connection to the land as a form of national pride and identity.<em> Algoma Landscape</em>, donated by Maryon E. Pearson to Global Affairs Canada, captures the rugged beauty of the Algoma region in Northern Ontario.</p>
+</div>
+</div>
+</details>
+<details id="a16" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Alex Janvier</summary>
+<p style="margin-top: 1.2rem;">b. 1935, Le Goff Reserve, Alberta<br>d. 2024, Cold Lake, Alberta</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Janvier-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Alex Janvier</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Janvier-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>Pond Wader</em><br>1988<br>Acrylic on linen canvas<br>96 x 126.3 cm<br>Catalogue no. 992.60.2<br>Global Affairs Canada Visual Art Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Alex Janvier was a member of the Cold Lake First Nations and one of Canada&rsquo;s most acclaimed artists. Janvier was instrumental in bringing Indigenous art to the global stage, where it earned recognition as an important contemporary practice. His paintings blend abstract and representational images with bright, often symbolic colours and curved line work to convey the cyclical nature of life as well as healing, humility and rebirth. <em>Pond Wader</em> is characteristic of Janvier&rsquo;s approach to composition, with a central burst of colour radiating outwards, and reflecting the vibrancy of the land and waters that connect all living things.</p>
+</div>
+</div>
+</details>
+<details id="a17" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Roy Kiyooka</summary>
+<p style="margin-top: 1.2rem;">b. 1926, Moose Jaw, Saskatchewan<br>d. 1994, Moose Jaw, Saskatchewan</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Kiyooka-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Roy Kiyooka</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Kiyooka-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>Squared Hex</em><br>c. 1975<br>Acrylic on canvas<br>Catalogue no. 75/6-0650 <br>Canada Council Art Bank Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Roy Kiyooka was a multidisciplinary Japanese-Canadian artist and an important figure in Western Canadian art. Born in Saskatchewan and raised in Calgary, Kiyooka explored themes of identity, displacement and culture. <em>Squared Hex </em>features a pattern that evokes traditional Japanese woodcutting motifs restrained in a series of squares, reflecting the experiences of many Canadians navigating cultural identity within the confines of a dominant culture.</p>
+</div>
+</div>
+</details>
+<details id="a18" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Rita Letendre</summary>
+<p style="margin-top: 1.2rem;">b. 1928, Drummondville, Quebec<br>d. 2021, Toronto, Ontario</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Letendre-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Rita Letendre</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Letendre-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>M&eacute;ar</em><br>1973<br>Acrylic on canvas<br>122 x 183 cm<br>Catalogue no. 74/5-0072<br>Canada Council Art Bank Collection</p>
+1973 Acrylic on canvas 122 x 183 cm Catalogue no. 74/5-0072 Canada Council Art Bank Collection</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Rita Letendre was a celebrated Quebecois-Abenaki painter known for abstract works featuring dynamic forms and shapes. Grounded in metaphors of light, darkness and movement, Letendre&rsquo;s practice was an ongoing commitment to the process of discovering the self and established her as a key figure in Canadian art history. <em>M&eacute;ar </em>features Letendre&rsquo;s vibrant colour palette and signature arrow motif, which she increasingly incorporated into her work as her interest in her Indigenous heritage grew.</p>
+</div>
+</div>
+</details>
+<details id="a19" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Emmanuel Osahor</summary>
+<p style="margin-top: 1.2rem;">b. 1993, Lagos, Nigeria<br>Lives and works in Toronto, Ontario</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Osahor-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Emmanuel Osahor</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Osahor-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>To see the dawn</em><br>2023<br>Oil on canvas<br>186 x 231.5 cm<br>Catalogue no. 2024.50.1<br>Global Affairs Canada Visual Art Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Nigerian-born Canadian artist Emmanuel Osahor explores beauty as an essential element of survival and a precursor to thriving. Reflecting a reverence for the natural world, his immersive paintings depict garden spaces as complex sanctuaries, blending reality and imagination to evoke human care while addressing the social inequalities that hinder or limit access to such spaces. For Osahor, these garden spaces layered with paradox are often contested sites of privilege that offer leisure, escape and refuge, requiring constant care, social awareness and environmental stewardship.</p>
+</div>
+</div>
+</details>
+<details id="a20" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Caroline Ouellette</summary>
+<p style="margin-top: 1.2rem;">b. 1975, Qu&eacute;bec, Quebec<br>Lives and works in Verch&egrave;res, Quebec</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Ouellette-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Caroline Ouellette</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Ouellette-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>Chardon</em><br>2005<br>Glass<br>57 x 27 x 27 cm<br>Catalogue no. 06/7-0048<br>Canada Council Art Bank Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Caroline Ouellette is a Quebecois artist whose work explores the medium of glass and themes of resistance and fragility. Taking the form of a vase or decanter, <em>Chardon</em> (thistle) highlights the utility of glass while also incorporating elements of its floral namesake. The tension between traditional and contemporary forms celebrates the beauty of innovation and the ways humans work with and transform natural materials.</p>
+</div>
+</div>
+</details>
+<details id="a21" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Maja Padrov</summary>
+<p style="margin-top: 1.2rem;">b. 1971, Novi Sad, Serbia<br>Lives and works in Gagetown, New Brunswick</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Padrov-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Maja Padrov</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Padrov-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>Articulate</em><br>2022<br>Stoneware<br>20.32 x 96.52 x 12.7 cm<br>Catalogue no. 2024.27.1a-d<br>Global Affairs Canada Visual Art Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Serbian-born Maritime artist Maja Padrov explores the sculptural possibilities of functional pottery and glaze chemistry. She is interested in different media and the way they can be emulated and reinterpreted using basic studio pottery techniques, such as wheel throwing and hand building, or extensive glaze testing. Crafted from high-fired stoneware, <em>Articulate</em> showcases her skill in combining traditional methods with innovative approaches.</p>
+</div>
+</div>
+</details>
+<details id="a22" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Sanna Rahola</summary>
+<p style="margin-top: 1.2rem;">b. 1974, H&auml;meenlinna, Finland<br>Lives and works in Walton, Nova Scotia</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Rahola-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Sanna Rahola</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Rahola-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em> Acadian Forest</em><br>2023<br>Merino wool, silk, linen and mohair in a live-sawn yellow birch frame<br>106.4 x 140.8 x 9.7 cm<br>Catalogue no. 2024.29.1<br>Global Affairs Canada Visual Art Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Finnish-born Maritime artist Sanna Rahola is known for her intricate handmade felt works, in which she layers carded wool to form vivid images and unique compositions that often resemble pastel or paint. Building on a long tradition of winter landscapes in Canadian art history, Rahola transforms a familiar subject using textile. <em>Acadian Forest</em> is particularly notable for its custom-made live-sawn yellow birch frame. By embedding materials pictured in the scene, Rahola brings the Maritime forest to life.</p>
+</div>
+</div>
+</details>
+<details id="a23" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Sabrina Ratt&eacute;</summary>
+<p style="margin-top: 1.2rem;">b. 1982, Qu&eacute;bec, Quebec<br>Lives and works in Paris, France</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Ratte-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Sabrina Ratt&eacute;</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Ratte-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>MONADE IV</em> 2020<br>Laminated archival pigment print<br>80 x 80 cm<br>Catalogue no. 2022.16.2<br>Global Affairs Canada Visual Art Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Sabrina Ratt&eacute; is a Canadian multimedia artist living and working in Paris, France. She uses emerging media techniques to create digital ecosystems that explore the connection between technology and nature. Using tools like virtual reality and animation, Ratt&eacute; imagines the evolution of new worlds, particularly without humanity. For this self portrait, the artist used 3D scans of her own body to investigate the place of the female body in both the digital world and in nature. Here, Ratt&eacute;&rsquo;s cyborg/goddess claims her rightful space in this lush&mdash;albeit simulated&mdash;setting.</p>
+</div>
+</div>
+</details>
+<details id="a24" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Jean Paul Riopelle</summary>
+<p style="margin-top: 1.2rem;">b. 1923, Montr&eacute;al, Quebec<br>d. 2002, Saint-Antoine-de-l&rsquo;Isle-aux-Grues, Quebec</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Riopelle-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Jean Paul Riopelle</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Riopelle-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>Sans titre</em><br>1954<br>Oil on canvas<br>73 x 91.5 cm<br>Catalogue no. 298<br>Global Affairs Canada Visual Art Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Jean Paul Riopelle is considered one of the most important Canadian artists of the twentieth century. A prolific artist, he is best known for his large-scale abstract expressionist paintings, which he created by applying thick layers of colour with a trowel or palette knife. Riopelle&rsquo;s signature technique is visible in this painting from the mid-1950s, a brilliant example of the artist&rsquo;s skill during his most influential period. The work has a dramatic handling of pigment, exploring texture and form while emphasizing movement and spontaneity.</p>
+</div>
+</div>
+</details>
+<details id="a25" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Enookie Saggiak</summary>
+<p style="margin-top: 1.2rem;">b. 1987, Kinngait (Cape Dorset), Nunavut<br>Lives and works in Kinngait, Nunavut</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Saggiak-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Enookie Saggiak</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Saggiak-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>Snowmobile</em><br>2023<br>Stone, antler and wood<br>55 x 14 x 14 cm<br>Catalogue no. 2024.34.1a, b<br>Global Affairs Canada Visual Art Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Enookie Saggiak's diverse practice is influenced by the Arctic landscape and his Inuit heritage. His sculptures, which incorporate natural materials and traditional motifs, build on both a rich tradition of Inuit artistry as well as a thriving contemporary art scene in the community of Kinngait. <em>Snowmobile</em> celebrates a vital mode of transportation while evoking the unique contemporary experience of living in the North through the use of hyper-local materials such as stone and antler.</p>
+</div>
+</div>
+</details>
+<details id="a26" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Moses Salihou</summary>
+<p style="margin-top: 1.2rem;">b. 1980, Maroua, Cameroon<br>Lives and works in Toronto, Ontario</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Salihou-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Moses Salihou</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Salihou-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>Homme (Portrait 2)</em><br>2023<br>Oil on canvas<br>126 x 95 x 6.4 cm<br>Catalogue no. 2024.46.1<br>Global Affairs Canada Visual Art Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Moses Salihou is a Cameroonian-Canadian painter who blends portraiture and abstraction to explore themes of identity, community and belonging. His work is deeply informed by his African origins and his experiences in North American society, which can be seen in his thick application of paint with a palette knife, a distinct technique used by renowned Canadian painter Jean Paul Riopelle, whose work is also displayed at the G7 Leader&rsquo;s Summit. Salihou applies this technique in <em>Homme (Portrait 2), </em>creating a textural intensity that mirrors the internal complexities of identity alongside the external markers of culture.</p>
+</div>
+</div>
+</details>
+<details id="a27" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">George Sawchuk</summary>
+<p style="margin-top: 1.2rem;">b. 1927, Kenora, Ontario<br>d. 2012, Kenora, Ontario</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Sawchuck-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">George Sawchuk</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Sawchuck-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>Rebirth</em><br>1978<br>Wood and pinecone<br>107 x 47 x 42 cm<br>Catalogue no. 78/9-0605<br>Canada Council Art Bank Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>George Sawchuk was a self-taught sculptor who created environmental installations integrating art with the natural world. Working mainly in wood and found objects, he was known for creating and maintaining a Forest Gallery in the area around his British Columbia home. <em>Rebirth</em> illustrates his unique approach to sculpture and his deep connection to nature, combining found objects and natural materials to create a dialogue between the man-made and the natural world.</p>
+</div>
+</div>
+</details>
+<details id="a28" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Robin Smith Peck</summary>
+<p style="margin-top: 1.2rem;">b. 1958, St. John&rsquo;s, Newfoundland and Labrador<br>Lives and works in Edmonton, Alberta</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/SmithPeck_thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Robin Smith Peck</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/SmithPeck_expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>Swimming on the 'C' Side</em><br>2014<br>Digital print, ink and gesso on paper<br>121 x 161 cm<br>Catalogue no. 2017.12.3<br>Global Affairs Canada Visual Art Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Robin Smith Peck is a mixed-media artist who works in painting, printmaking and collage. Her work explores personal memory and what it means to be human. Originally from Newfoundland and Labrador, Smith Peck has lived and worked in Alberta for some time. Drawing inspiration from remote Northern communities and natural environments, she creates layered, textural compositions that evoke landscape and traces of memory.<em> Swimming on the &lsquo;C&rsquo; Side</em> exemplifies her ability to delve into the intricacies of the human experience and natural and built environments.</p>
+</div>
+</div>
+</details>
+<details id="a29" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Sheila Spence</summary>
+<p style="margin-top: 1.2rem;">b. 1952, Winnipeg, Manitoba<br>Lives and works in Winnipeg, Manitoba</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Spence-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Sheila Spence</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Spence-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>Near Treesbank, MB #1-3</em><br>2009<br>Archival inkjet print<br>111.6 x 233 cm<br>Catalogue no. 2018.46.1a-c<br>Global Affairs Canada Visual Art Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Sheila Spence is a photographer, activist and arts administrator living and working in Winnipeg, Manitoba. Her lens-based works investigate themes of identity, community and representation. Deeply inspired by her prairie home, she has spent her career documenting the people and places that surround her. In this triptych of photos, Spence highlights the nuance of the prairie landscape, reflecting her close relationship with her home environment.</p>
+</div>
+</div>
+</details>
+<details id="a30" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Jeremy Stanbridge</summary>
+<p style="margin-top: 1.2rem;">b. 1972, Vancouver, British Columbia<br>Lives and works in Vancouver, British Columbia</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Stanbridge-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Jeremy Stanbridge</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Stanbridge-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>Abstract Painting (Goforcrysham)</em><br>2004<br>Digital lightjet print on gator board<br>122 x 122 cm<br>Catalogue no. 08/9-0002<br>Canada Council Art Bank Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Jeremy Stanbridge is a painter and printmaker from British Columbia who explores the interplay of colour, shape and perspective to create visual illusions. His work examines how these elements influence optical perception, contributing to the op art (optical art) painting genre. <em>Abstract Painting (Goforcrysham)</em> features a delicately rendered abstract surface with soft blurring and subtle colouring. With a tartan-like design evoking his mother&rsquo;s Scottish roots, this work plays with light, shape and illusion.</p>
+</div>
+</div>
+</details>
+<details id="a31" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Jim Thomson</summary>
+<p style="margin-top: 1.2rem;">b. 1953, Ottawa, Ontario<br>d. 2013, East Aldfield, Quebec</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Thomson-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Jim Thomson</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Thomson-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>The View From Here, Dark</em><br>2011<br>Ceramic<br>111.76 x 76.2 x 33.02 cm<br>Catalogue no. 2012.22.1<br>Global Affairs Canada Visual Art Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Jim Thomson was an Ottawa-based artist who worked in clay to create unique and experimental ceramics. His sculptures of everyday objects took on architectural or other transformative forms, making them seem unfamiliar. His ceramics are characterized by unusual shapes and sharp edges, rough textures and dark, earthy tones. <em>The View From Here, Dark</em> perfectly illustrates Thomson&rsquo;s approach, evoking layers of sediment or bedrock through glazing and texture.</p>
+</div>
+</div>
+</details>
+<details id="a32" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Ione Thorkelsson</summary>
+<p style="margin-top: 1.2rem;">b. 1947, Ashern, Manitoba<br>Lives and works in Roseisle, Manitoba</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;"><!-- Image 1 -->
+<div style="flex: 1 1 150px; max-width: 150px;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Thorkelsson-1-thumb.jpg" alt="Thumbnail 1" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border: 2px solid #ccc; border-radius: 6px;">
+<div style="margin-top: 0.5rem; font-size: 0.85rem; color: #025e5b;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="margin-top: 0; color: #025e5b; text-align: center;">Ione Thorkelsson</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Thorkelsson-1-expanded.jpg" alt="Expanded 1" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>Cardinal Vase 6535</em><br>2005<br>Blown glass<br>18 x 18 cm<br>Catalogue no. 2006.20.1<br>Global Affairs Canada Visual Art Collection</p>
+</div>
+</label></div>
+<!-- Image 2 -->
+<div style="flex: 1 1 150px; max-width: 150px;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Thorkelsson-2-thumb.jpg" alt="Thumbnail 2" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border: 2px solid #ccc; border-radius: 6px;">
+<div style="margin-top: 0.5rem; font-size: 0.85rem; color: #025e5b;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="margin-top: 0; color: #025e5b; text-align: center;">Ione Thorkelsson</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Thorkelsson-2-expanded.jpg" alt="Expanded 2" style="width: 100%; border-radius: 4px; border: 2px solid #ccc; margin-bottom: 0.5rem;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>Cardinal Vessel 6538</em><br>2005<br>Blown glass<br>18 x 18 cm<br>Catalogue no. 2006.20.2<br>Global Affairs Canada Visual Art Collection</p>
+</div>
+</label></div>
+<!-- Description Text -->
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Inspired by the natural world and known for using challenging glass techniques, Ione Thorkelsson sources materials from the world around her to create speckled textures and unique colours. Reflecting a deep connection to the land, many of her works use casts created from found objects such as skeletons, feathers, roots and trees. These vases are named for the bright red of the cardinal&mdash;a vividly coloured bird common in many parts of Eastern Canada, but a rare sighting in the artist&rsquo;s home province of Manitoba as well as in Alberta.</p>
+</div>
+</div>
+</details>
+<details id="a33" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Yves Trudeau</summary>
+<p style="margin-top: 1.2rem;">b. 1930, Montr&eacute;al, Quebec<br>d. 2017, Montr&eacute;al, Quebec</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Trudeau-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Yves Trudeau</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Trudeau-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>Mur Ferm&eacute; et Ouvert</em><br>Bronze<br>1975<br>65.2 x 76.1 x 76 cm<br>Catalogue no. 994.110.1<br>Global Affairs Canada Visual Art Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Yves Trudeau was a prominent sculptor whose modernist style and innovative public art works significantly shaped the artistic landscape in Quebec. Trudeau was involved with several associations to promote the rights and status of artists during his life. <em>Mur Ferm&eacute; et Ouvert, </em>meaning &ldquo;closed and open wall,&rdquo;is one of a series of similarly titled works that explore the contrast of openness, signifying light and hope, and a walling off, symbolizing sorrow and hate. The simplified forms, industrial materials and integrated message are characteristic of Trudeau&rsquo;s larger oeuvre.</p>
+</div>
+</div>
+</details>
+<details id="a34" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Bert Weir</summary>
+<p style="margin-top: 1.2rem;">b. 1925, Sandwich, Ontario<br>d. 2018, Parry Sound, Ontario</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Weir-expanded.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Bert Weir</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Weir-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>Owl Lake Reflections</em><br>1976<br>Oil on canvas<br>213.5 x 274.5 cm<br>Catalogue no. 76/7-0265<br>Canada Council Art Bank Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Bert Weir was a painter, eco-activist and former member of the Canadian Armed Forces from Parry Sound, Ontario. He was known for his colourful, semi-abstract works, often rooted in the intrinsic relationship between the natural and spiritual worlds. <em>Owl Lake Reflections </em>is characteristic of Weir&rsquo;s renderings of the northern Ontario wilderness, depicting the rippling waves of the Ontario lake where Weir resided every summer.</p>
+</div>
+</div>
+</details>
+<details id="a35" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Jessica Winters</summary>
+<p style="margin-top: 1.2rem;">b. 1996, Makkovik, Newfoundland and Labrador<br>Lives and works in St. John&rsquo;s, Newfoundland and Labrador</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Winters-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Jessica Winters</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Winters-exapnded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>LICHEN (NUUK 1)</em><br>2023<br>Acrylic on canvas<br>86.4 x 86.4 cm<br>Catalogue no. 2024.41.2<br>Global Affairs Canada Visual Art Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Jessica Winters is an Inuk artist from Labrador whose detailed paintings reflect both scientific and culturally informed knowledge. Her practice is heavily influenced by her studies in biology, which she leverages to advocate for the preservation and protection of the Arctic environment and Inuit ways of life. Winters&rsquo; photorealist depictions of lichen, granite and snow are created through a sustained process of observation, conveying her keen curiosity and an intimate knowledge of the tundra.</p>
+</div>
+</div>
+</details>
+<details id="a36" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Kyran Yeomans</summary>
+<p style="margin-top: 1.2rem;">b. 1988, Vancouver, British Columbia<br>Lives and works in Vancouver, British Columbia</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Yeomans-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Kyran Yeomans</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Yeomans-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em> Sunrise</em><br>2019<br>Bronze<br>63.5 dia. x 12.7 cm<br>Catalogue no. 2021.14.1</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Kyran Yeomans is a Haida carver, photographer and filmmaker who comes from a long line of esteemed Haida artists. His works, ranging from detailed miniatures to monumental totem poles, blend traditional Haida design with contemporary aesthetics. <em>Sunrise </em>is a bronze panel featuring a sun figure, reflecting the sun&rsquo;s vital role as a source of energy and life, and its symbolic connection to cycles of life and seasonal transformation. It highlights the artist&rsquo;s respect for his heritage and the central role of nature and the environment in Haida art and culture.</p>
+</div>
+</div>
+</details>
+<details id="a37" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Jinny Yu</summary>
+<p style="margin-top: 1.2rem;">b. 1976, Seoul, South Korea <br>Lives and works in Ottawa, Ontario and Berlin, Germany</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Yu-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Jinny Yu</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Yu-expanded.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em> Story of a Global Nomad (De Vonk 1)</em><br>2007<br>Oil and graphite on aluminum<br>183 x 183 cm<br>Catalogue no. 11/2-0029<br>Canada Council Art Bank Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Jinny Yu is a Korean-Canadian artist, educator and self-identified global nomad. Through painting, Yu examines the nature of migration and movement, reflects on relationships between social groups, and explores her own identity. She extracts patterns from her experiences of different cultures and places, creating abstract works that speak to her sense of belonging and detachment stemming from her experiences of immigration and relocation.</p>
+</div>
+</div>
+</details>
+<details id="a38" style="font-family: 'Lexend', 'Roboto', 'Poppins', sans-serif; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 3px solid #466077;">
+<summary style="font-size: 1.6rem; font-weight: bold; color: #466077; margin-top: 1.5rem; cursor: pointer;">Mary Yuusipik Singaqti</summary>
+<p style="margin-top: 1.2rem;">b. 1936, Kitikat (Back River), Nunavut<br>d. 2017, Qamani&rsquo;tuaq (Baker Lake), Nunavut</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+<div style="flex: 1 1 25%; max-width: 25%;"><label style="display: block; cursor: pointer; position: relative;"> <input type="checkbox" style="display: none;" onclick="this.parentElement.querySelector('.expand-box').style.display = this.checked ? 'block' : 'none';"> <img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/thumbnails-exp/Yuusipik-thumb.jpg" alt="Thumbnail" style="margin-left: 0; width: 150px; border: 2px solid #025E5B; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+<div style="margin-top: 0.5rem; font-size: 0.95rem; color: #025e5b; margin-left: 0;">Click image to expand</div>
+<div class="expand-box" style="display: none; position: fixed; top: 5vh; left: 50%; transform: translateX(-50%); width: 85vw; max-width: 600px; max-height: 85vh; overflow-y: auto; background-color: #f0f9f9; border: 3px solid #025E5B; border-radius: 10px; padding: 1rem; text-align: center; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><span onclick="this.parentElement.style.display='none';" style="position: absolute; top: 0.5rem; right: 1rem; cursor: pointer; font-size: 1.5rem; color: #025e5b;">✕</span>
+<h3 style="font-size: 1.2rem; text-align: left; padding-left: 2.5rem; margin-top: 0; color: #025e5b;">Mary Yuusipik Singaqti</h3>
+<img src="https://cdn-ca.aglty.io/ea689367/art-g7-files/expanded-new/Yuusipik-expended.jpg" alt="Expanded" style="width: 95%; max-width: 500px; height: auto; margin: 0 auto 0.5rem auto; border-radius: 4px; border: 2px solid #025E5B; display: block;">
+<p style="font-size: 0.85rem; color: #333; text-align: left; padding: 0 1rem;"><em>Winter Scene/Summer Scene</em><br>1995<br>Wool duffle, appliqu&eacute; and embroidery<br>131.5 x 96.5 cm<br>Catalogue no. 996.46.1<br>Global Affairs Canada Visual Art Collection</p>
+</div>
+</label></div>
+<div style="flex: 1 1 60%; max-width: 60%; border-left: 4px solid #466077; padding-left: 2rem;">
+<p>Mary Yuusipik Singaqti was an Inuk seamstress and artist. She belonged to the last generation of Inuit who experienced the nomadic way of life before relocating into the permanent settlement of Qamani&rsquo;tuaq (Baker Lake), Nunavut. <em>Winter Scene/Summer Scene</em> is a tapestry featuring different Inuit seasonal experiences on the land in the Arctic. It celebrates the longstanding and sustainable use of natural resources while celebrating the Arctic experience as an integral part of Canadian identity.</p>
+</div>
+</div>
+</details>
+</div>
+<div class="tab-content content2">
+<div style="font-family: sans-serif; background: #f9f9f9; padding: 2rem; color: #333;">
+<h2 style="padding-bottom: 3rem;">Other featured artworks</h2>
+<figure><img style="width: 100%;" src="https://cdn-ca.aglty.io/ea689367/art-g7-files/bears/20250610_Colour Bear Art-1.jpg" alt=""></figure>
+<!-- Section Header -->
+<h2 style="border-bottom: 2px solid #ccc; padding-bottom: 3rem; padding-top: 3rem;">Featured Artists</h2>
+
+<!-- Artist Bio -->
+<h3>Jason Carter</h3>
+<p>Jason Carter is a sculptor, painter, and public artist from the Little Red River Cree Nation. Known for his playful approach to celebrating where he lives and those who inhabit the land, Carter created this sculpture series inspired by the Bear, using his iconic clean lines and brilliant colours.</p>
+
+<!-- Featured Sculpture (2-column layout) -->
+<div style="display: flex; gap: 2rem; align-items: stretch; flex-wrap: wrap; margin-bottom: 2rem;"> 
+  
+  <!-- Left: Image -->
+  <div style="flex: 1 1 30%; display: flex; align-items: stretch;"> <img 
+        src="https://cdn-ca.aglty.io/ea689367/art-g7-files/bears/2025_DSMM_Bear Art Installation_ Time 1012_1.jpg" 
+        alt="Bear sculpture installation by Jason Carter" 
+        style="width: 100%; height: auto; border-radius: 8px; object-fit: cover; display: block;"> </div>
+  
+  <!-- Right: Info -->
+  <div style="flex: 1 1 65%; display: flex; flex-direction: column; justify-content: center;">
+    <p><strong>Jason  Carter</strong><br>
+      <strong> </strong>b. Canmore, Alberta (Little Red River Cree Nation)<br>
+      <em>The Sitting Bear (Black)</em><br>
+      2024<br>
+      High-density foam, polyurethane hard coat,  wood, acrylic paint<br>
+      3.5&rsquo; x 3&rsquo; x 5&rsquo; <br>
+      <strong>Jason  Carter</strong><br>
+      b. Canmore, Alberta (Little Red River Cree  Nation)<br>
+      <em>The Walking Bear (Orange)</em><br>
+      2024<br>
+      High-density foam, polyurethane hard coat,  wood, acrylic paint<br>
+      5&rsquo; x 2.5&rsquo; x 3.5&rsquo;</p>
+  </div>
+</div>
+
+<div style="display: flex; flex-wrap: nowrap; gap: 2rem; align-items: stretch; margin-bottom: 3rem; padding-bottom: 3rem;">
+
+  <!-- Left Image -->
+  <div style="flex: 0 0 30%; display: flex; align-items: stretch;">
+    <img 
+      src="https://cdn-ca.aglty.io/ea689367/art-g7-files/bears/20250610_Colour Bear Art-4.jpg" 
+      alt="Bear sculpture by Jason Carter" 
+      style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
+  </div>
+
+  <!-- Center Text (no margin/padding at top) -->
+  <div style="flex: 0 0 40%; display: flex; flex-direction: column; justify-content: flex-start;">
+    <p style="margin-top: 0; padding-top: 0;">
+      <strong>Jason Carter</strong><br>
+      b. Canmore, Alberta (Little Red River Cree Nation)<br>
+      <em>The Satiated Standing Bear (White)</em><br>
+      2024<br>
+      High-density foam, polyurethane hard coat, wood, acrylic paint<br>
+      2.5’ x 2.5’ x 5’
+    </p>
+  </div>
+
+  <!-- Right Image -->
+  <div style="flex: 0 0 30%; display: flex; align-items: stretch;">
+    <img 
+      src="https://cdn-ca.aglty.io/ea689367/art-g7-files/bears/20250610_Colour Bear Art-6.jpg" 
+      alt="Second view of Bear sculpture by Jason Carter" 
+      style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
+  </div>
+
+</div>
+	</div>
+</div>
+</div>
