@@ -1,0 +1,96 @@
+/* ===== GEAC Dashboard Enhanced Styles ===== */
+body {
+  font-family: 'Lexend', 'Roboto', sans-serif;
+  background: #f4f7f7;
+  margin: 0;
+  color: #1a1a1a;
+}
+
+header {
+  background: linear-gradient(120deg, #025E5B, #00A6A0);
+  color: #fff;
+  text-align: center;
+  padding: 2.5rem 1rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+}
+
+header .subtitle {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.country {
+  position: relative;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.country:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.flag-bg img {
+  width: 100%;
+  display: block;
+  height: 160px;
+  object-fit: cover;
+}
+
+.info {
+  text-align: center;
+  padding: 1rem;
+  color: #025E5B;
+}
+
+.info h2 {
+  font-size: 1.25rem;
+  margin: 0.3rem 0;
+}
+
+.icon {
+  font-size: 1.8rem;
+  color: #00A6A0;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(2,94,91,0.9);
+  color: #fff;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  text-align: center;
+}
+
+.country:hover .overlay {
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  header h1 { font-size: 1.5rem; }
+  .overlay { font-size: 1rem; }
+}
