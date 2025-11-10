@@ -74,10 +74,23 @@
     margin-bottom: 1rem;
   }
 
+  /* 3 items per row */
   .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .projects {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .projects {
+      grid-template-columns: 1fr;
+    }
   }
 
   .card {
@@ -164,8 +177,7 @@
           <h3>G7 / GEAC Dashboard</h3>
           <p>Developed bilingual, accessible templates in Agility CMS using HTML, CSS, and JS. Designed responsive layouts and dashboards in Figma and Adobe XD, ensuring WCAG 2.1 compliance.</p>
           <a href="https://www.g7canada.ca" target="_blank" class="btn">Coming Soon</a>
-          <!-- <a href="https://github.com/tsve0003/code-only/tree/main/geac-dashboard" target="_blank" class="btn secondary">🔗 View on GitHub</a>
-        </div> -->
+        </div>
       </div>
 
       <div class="card">
